@@ -12,7 +12,7 @@ export class FechasYhorasComponent implements OnInit {
   date2:any
 
   constructor(private service:ServiceEmpleadoService) { }
-
+  //se utilizo json server para simular una peticion get y poder mostrar los datos como si fuera de una peticion a una api rest
   ngOnInit(): void {
     this.service.getEmpleadoRegistro().subscribe(data => {
       this.date= data;
