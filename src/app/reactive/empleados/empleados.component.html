@@ -1,0 +1,106 @@
+<h2>Reactive: Empleados</h2>
+<hr>
+
+<div class="row">
+    <div class="col">
+
+        <form (ngSubmit)="Guardar()" autocomplete="off" [formGroup]="FormularioEmpleado">
+
+            <div class="mb-3 row">
+                <label class="col-sm-3 col-form-label">Nombres</label>
+                <div class="col-sm-9">
+                    <input type="text" class="form-control" formControlName="nombre" placeholder="Nombre">
+                    <span class="form-text text-danger" *ngIf="campoValido('nombre')">
+                        Este Campo es Obligatorio, no debe tener caracteres especiales y debe tener mas de 3 letras
+                    </span>
+                </div>
+            </div>
+
+            <div class="mb-3 row">
+                <label class="col-sm-3 col-form-label">Apellidos</label>
+                <div class="col-sm-9">
+                    <input type="text" class="form-control" formControlName="apellido" placeholder="Apellido">
+                    <span class="form-text text-danger" *ngIf="campoValido('apellido')">
+                        Este Campo es Obligatorio, no debe tener caracteres especiales y debe tener mas de 3 letras
+                    </span>
+                </div>
+            </div>
+
+            <div class="mb-3 row">
+                <label class="col-sm-3 col-form-label">Edad</label>
+                <div class="col-sm-9">
+                    <input type="number" class="form-control" formControlName="edad" placeholder="Edad">
+                    <span class="form-text text-danger" *ngIf="campoValido('edad')">
+                        Este campo es obligatario y no permite valores negativos
+                    </span>
+                </div>
+            </div>
+
+            <div class="mb-3 row">
+                <label class="col-sm-3 col-form-label">Cargo</label>
+                <div class="col-sm-9">
+                    <input type="text" class="form-control" formControlName="cargo" placeholder="Cargo">
+                    <span class="form-text text-danger" *ngIf="campoValido('cargo')">
+                        Este Campo es Obligatorio, no debe tener caracteres especiales y debe tener mas de 3 letras
+                    </span>
+                </div>
+            </div>
+
+            <div class="mb-3 row">
+                <label class="col-sm-3 col-form-label">Cedula</label>
+                <div class="col-sm-9">
+                    <input type="text" class="form-control" formControlName="cedula" placeholder="Cedula">
+                    <span class="form-text text-danger" *ngIf="campoValido('cedula')">
+                        Este campo es obligatario, no permite valores negativos o caracteres especiales
+                    </span>
+                </div>
+            </div>
+
+            <div class="mb-3 row">
+                <label class="col-sm-3 col-form-label">NºCelular</label>
+                <div class="col-sm-9">
+                    <input type="text" class="form-control" formControlName="celular" placeholder="Celular">
+                    <span class="form-text text-danger" *ngIf="campoValido('celular')">
+                        Este campo es obligatario, no permite valores negativos o caracteres especiales
+                    </span>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <button type="submit" class="btn btn-primary float-end" [disabled]="FormularioEmpleado.invalid">
+                        Guardar
+                    </button>
+                </div>
+            </div>
+
+
+
+        </form>
+
+    </div>
+</div>
+
+
+
+
+<!-- <div class="row">
+    <div class="col">
+
+        <span>Valid</span>
+        <pre>{{ FormularioEmpleado.valid }}</pre>
+
+        <span>Pristine</span>
+        <pre>{{ FormularioEmpleado.pristine }}</pre>
+
+        <span>Touched</span>
+        <pre>{{ FormularioEmpleado.touched }}</pre>
+
+        <span>Value</span>
+        <pre>{{ FormularioEmpleado.value | json }}</pre>
+
+        <span>CustomDirective</span>
+        <pre>{{ FormularioEmpleado.controls.existencias?.errors | json }}</pre>
+
+    </div>
+</div> -->

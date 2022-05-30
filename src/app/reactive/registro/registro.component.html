@@ -1,0 +1,83 @@
+<h2>Reactive: Registro Ingreso</h2>
+<hr>
+
+<div class="row">
+    <div class="col">
+
+        <form (ngSubmit)="GuardarIngreso()" autocomplete="off" [formGroup]="FormularioIngreso">
+
+            <div class="mb-3 row">
+                <label class="col-sm-3 col-form-label">Fecha ingreso</label>
+                <div class="col-sm-9">
+                    <input type="date" class="form-control" formControlName="fechaingreso">
+                    <span class="form-text text-danger" *ngIf="campoValidoIngreso('fechaingreso')">
+                        Este Campo es Obligatorio
+                    </span>
+                </div>
+            </div>
+
+            <div class="mb-3 row">
+                <label class="col-sm-3 col-form-label">cedula</label>
+                <div class="col-sm-9">
+                    <input type="text" class="form-control" formControlName="cedula" placeholder="cedula">
+                    <span class="form-text text-danger" *ngIf="campoValidoIngreso('cedula')">
+                        Este campo es obligatario
+                    </span>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <button type="submit" class="btn btn-primary float-end" [disabled]="FormularioIngreso.invalid">
+                        Guardar
+                    </button>
+                </div>
+            </div>
+
+
+
+        </form>
+
+    </div>
+</div>
+<br><br>
+<h2>Reactive: Registro Salida</h2>
+<hr>
+
+<div class="row">
+    <div class="col">
+
+        <form (ngSubmit)="GuardarSalida()" autocomplete="off" [formGroup]="FormularioSalida">
+
+            <div class="mb-3 row">
+                <label class="col-sm-3 col-form-label">Fecha Salidad</label>
+                <div class="col-sm-9">
+                    <input type="date" class="form-control" formControlName="fechasalida">
+                    <span class="form-text text-danger" *ngIf="campoValidoSalida('fechasalida')">
+                        Este Campo es Obligatorio
+                    </span>
+                </div>
+            </div>
+
+            <div class="mb-3 row">
+                <label class="col-sm-3 col-form-label">cedula</label>
+                <div class="col-sm-9">
+                    <input type="text" class="form-control" formControlName="cedula" placeholder="cedula">
+                    <span class="form-text text-danger" *ngIf="campoValidoSalida('cedula')">
+                        Este campo es obligatario
+                    </span>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <button type="submit" class="btn btn-primary float-end" [disabled]="FormularioSalida.invalid">
+                        Guardar
+                    </button>
+                </div>
+            </div>
+
+        </form>
+
+    </div>
+</div>
