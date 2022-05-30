@@ -4,6 +4,7 @@
 
 export const environment = {
   production: false,
+  //esos son las urls para la peticion con su respetivo puerto
   EmpleadosFechas:'http://localhost:3000/empleados',
   EmpleadosFechaSalida:'http://localhost:3001/empleados'
 };

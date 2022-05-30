@@ -10,7 +10,7 @@ export class ServiceEmpleadoService {
   constructor(private http:HttpClient) { 
 
   }
-
+  //realiza la peticion get la url de la api rest simulada esta en "enviroment"
   getEmpleadoRegistro(){
     return this.http.get(environment.EmpleadosFechas);
   }
